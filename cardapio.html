@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Restaurante Exemplo - Cardápio</title>
+  <title>Restaurante ComerBem - Cardápio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <header class="site-header">
-    <h1>Restaurante Exemplo</h1>
+    <h1>Restaurante ComerBem</h1>
     <nav>
       <a href="index.html">Início</a>
       <a href="cardapio.html">Cardápio</a>
@@ -23,10 +23,32 @@
     <p>Selecione um prato para ver detalhes.</p>
 
     <div class="grid" id="menuGrid"></div>
+    
+    <div id="popupLateral" class="popup">
+      <button id="fecharPopup" class="fechar">&times;</button>
+      <h2>Reservar Prato</h2>
+      <form id="formReserva">
+        <label for="nome">Seu nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="prato">Prato desejado:</label>
+        <select id="prato"></select>
+        
+        <li>
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
+        <label for="data">Hora:</label>
+        <input type="time" id="hora" required>
+        </li>
+
+        <button type="submit">Confirmar Reserva</button>
+      </form>
+    </div>
+
   </main>
 
   <footer>
-    <p>© 2025 Restaurante Exemplo</p>
+    <p>© 2025 Restaurante ComerBem</p>
   </footer>
 
   <script src="js/main.js"></script>
