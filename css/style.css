@@ -318,7 +318,7 @@ footer {
 }
 
 .btn-reservar {
-    position: fixed;
+    position: relative;
     width: 60%;
     height: 20%;
     font-size: 15px;
