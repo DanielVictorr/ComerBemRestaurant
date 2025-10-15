@@ -109,7 +109,17 @@ function populateHighlights() {
   const highlights = document.getElementById('highlights');
   if (!highlights) return;
   // mostrar 4 primeiros como destaque
-  pratos.slice(0, 4).forEach(p => highlights.appendChild(createCard(p)));
+  pratos.slice(0, 4).forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${p.img}" alt="${p.nome}" />
+      <h4>${p.nome}</h4>
+      <p class="desc">${p.descricao}</p>
+      <p class="price"><strong>${p.preco}</strong></p>
+    `;
+    highlights.appendChild(card);
+  });
 }
 
 // Abre popup pré-selecionando o prato escolhido
@@ -124,9 +134,19 @@ function abrirPopupComPrato(nomePrato) {
 
 // Execute on load
 document.addEventListener('DOMContentLoaded', () => {
-  populateMenu();
-  populateHighlights();
   preencherSelectPratos();
+
+  const currentPage = window.location.pathname;
+
+  // Se estiver na página inicial (index.html)
+  if (currentPage.includes("index.html") || currentPage.endsWith("/")) {
+    populateHighlights(); // mostra apenas 4 pratos
+  }
+
+  // Se estiver na página de cardápio
+  else if (currentPage.includes("cardapio.html")) {
+    populateMenu(); // mostra todos os pratos com botão de reserva
+  }
 });
 
 
