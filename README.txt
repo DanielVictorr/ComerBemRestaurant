@@ -1,4 +1,4 @@
-Site estático exemplo para um restaurante.
+Site estático exemplo para um restaurante feito para exercitar a memória.
 Arquivos incluídos:
 - index.html (Início)
 - cardapio.html (Cardápio)
